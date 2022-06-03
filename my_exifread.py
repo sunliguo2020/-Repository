@@ -50,7 +50,6 @@ def exif_Image_Model(file_name, type='Image Model'):
     finally:
         f.close()
 
-
     result = tag.get(type)
 
     if result is not None:
