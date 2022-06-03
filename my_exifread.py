@@ -37,17 +37,19 @@ def exif_Image_Model(file_name, type='Image Model'):
     :return:
     """
     if not os.path.isfile(file_name):
-        return ""
-    f = open(file_name, 'rb')
-    tag = {}
+        return
+
     try:
+        f = open(file_name, 'rb')
+        tag = {}
         tag = exifread.process_file(f)
     except Exception as e:
         print("读取exif失败", file_name, e)
     # else:
     #     tag = {}
-    f.close()
-    # print(tag)
+    finally:
+        f.close()
+
 
     result = tag.get(type)
 
