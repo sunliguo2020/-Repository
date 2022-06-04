@@ -45,8 +45,7 @@ def exif_Image_Model(file_name, type='Image Model'):
         tag = exifread.process_file(f)
     except Exception as e:
         print("读取exif失败", file_name, e)
-    # else:
-    #     tag = {}
+
     finally:
         f.close()
 
@@ -86,20 +85,6 @@ def get_img_model(img_dir):
 
 
 if __name__ == "__main__":
-    # img_camera_dict = get_img_model(r'E:\孙婉贻')
-    # print(set(img_camera_dict.values()))
-    # print(len(img_camera_dict))
-    #
-    # for file_path,camera in img_camera_dict.items():
-    #     #print(file_path,camera)
-    #     file_name=os.path.split(file_path)[-1]
-    #     if camera != "MI 5s":
-    #         print(file_path,camera)
-    #         #mymovefile(file_path,os.path.join("h:\\",camera,file_name))
-    #
-    #     #print("file_path:{0},camear:{1}".format(file_path,camera))
-    #
-    #     #mymovefile(file_path,os.path.join("h:\\",camera,file_name))
 
     for root, dirs, files in os.walk(r'E:\Nikon Transfer\abc'):
         for f in files:
